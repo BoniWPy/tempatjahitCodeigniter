@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+body{
+  background-color: #777777;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  outline: none;
+}
+
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-items: center;
+  margin-top: 20px;
+}
+
+form h1 {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 0 4px;
+}
+
+/* FORM BUTTONS */
+
+.form-buttons {
+  justify-content: center;
+}
+
+.form-buttons .button {
+  border: none;
+  padding: 1em 2em;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: transparent;
+  width:405px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 1px;
+  transition: all 0.25s;
+}
+
+.form-buttons input[type=submit] {
+  border: 1px solid black;
+}
+
+.form-buttons .button:hover {
+  background: black;
+  color: white;
+}
+
+/* FORM INPUT */
+
+.form-input {
+  width: 100%;
+  position: relative;
+}
+
+.form-input textarea,
+.form-input input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.7);
+  background: transparent;
+  font-size: 18px;
+  padding: 8px 0 8px 0;
+  margin-bottom: 4px;
+  transition: border 0.25s;
+  resize: none;
+}
+
+#login-form .form-input input,
+#login-form .form-input textarea {
+  padding-right: 60px;
+}
+
+@keyframes labelUnfocus {
+  0% {
+    font-size: 14px;
+    top: -14px;
+    color: black;
+  }
+}
+
+.form-input label {
+  animation: 0.25s ease 0s labelUnfocus;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 18px;
+  cursor: text;
+  color: rgba(0,0,0,.7);
+  transition: color 0.25s;
+}
+
+.form-input .forgot-link {
+  text-decoration: none;
+  color: rgba(0,0,0,.7);
+  position: absolute;
+  top: 10px;
+  right: 0;
+  font-size: 14px;
+  transition: all 0.35s;
+}
+
+.form-input .forgot-link:hover {
+  color: black;
+}
+
+/* FORM INPUT WHEN FOCUSED */
+
+@keyframes labelFocus {
+  0% {
+    top: 8px;
+    font-size: 18px;
+    color: rgba(0,0,0,.7);
+  }
+}
+
+.form-input textarea:focus + label,
+.form-input.focused label,
+.form-input input:focus + label {
+  animation: 0.25s ease 0s labelFocus;
+  font-size: 14px;
+  top: -14px;
+}
+
+.form-input textarea:focus + label,
+.form-input input:focus + label {
+  color: black;
+}
+
+.form-input textarea:focus,
+.form-input input:focus {
+  outline: none;
+  border-bottom-color: black;
+}
+
+/* FORM DARK THEME */
+
+body.dark {
+  background: #101010;
+}
+
+body.dark .toggle-warnings,
+body.dark .toggle-theme,
+body.dark .form-title,
+body.dark .form-buttons .button {
+  color: white;
+}
+
+body.dark .form-input .forgot-link,
+body.dark .form-input label {
+  color: rgba(255,255,255,.7);
+}
+
+body.dark .form-input input,
+body.dark .form-input textarea {
+  border-color: white;
+}
+
+body.dark .form-buttons input[type=submit] {
+  border-color: rgba(255,255,255,.7);
+}
+
+body.dark .form-buttons .button:hover {
+  background: white;
+  color: black;
+}
+
+@keyframes labelFocusDark {
+  0% {
+    top: 8px;
+    font-size: 18px;
+    color: rgba(255,255,255,.7);
+  }
+}
+
+body.dark .form-input textarea:focus + label,
+body.dark .form-input.focused label,
+body.dark .form-input input:focus + label {
+  animation: 0.25s ease 0s labelFocusDark;
+}
+
+body.dark .form-input textarea:focus + label,
+body.dark .form-input input:focus + label {
+  color: white;
+}
+
+body.dark .form-input textarea:focus,
+body.dark .form-input input:focus {
+  border-bottom-color: white;
+}
+
+body.dark .form-input textarea,
+body.dark .form-input input {
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+@keyframes labelUnfocusDark {
+  0% {
+    font-size: 14px;
+    top: -14px;
+    color: white;
+  }
+}
+
+body.dark .form-input label {
+  animation: 0.25s ease 0s labelUnfocusDark;
+}
+
+/* FORM INPUT WITH WARNING */
+
+body .toggle-theme, 
+body .toggle-warnings {
+  display: block;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+body .warning-message {
+  font-size: 14px;
+  color: firebrick;
+  display: none;
+}
+
+body .form-input.warning textarea,
+body .form-input.warning input {
+  border-bottom-color: firebrick;
+}
+
+body .form-input.warning .warning-message {
+  display: initial;
+}

@@ -1,0 +1,7 @@
+index url : http://localhost:8080/setun/Welcome/index
+admin/owner url :http://localhost:8080/setun/c_routing/login_admin
+
+admin account
+
+username : admin
+password : 123qweasd 
